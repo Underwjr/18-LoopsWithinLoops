@@ -12,9 +12,9 @@ def main():
     run_test_rectangle_of_stars()
     run_test_triangle_of_stars()
     run_test_decreasing_exclamation_marks()
-    # run_test_alternating_brackets()
-    # run_test_triangle_same_number_in_each_row()
-    # run_test_triangle_all_numbers_in_each_row()
+    run_test_alternating_brackets()
+    run_test_triangle_same_number_in_each_row()
+    run_test_triangle_all_numbers_in_each_row()
 
 
 def run_test_rectangle_of_stars():
@@ -157,10 +157,15 @@ def decreasing_exclamation_marks(m, n):
        !!
     Precondition:  m and n are positive integers with m >= n.
     """
-    for k in range(m - 1):
-        for j in range(k + 1, m + 1):
+    for k in range(m, n - 1, -1):
+        for j in range(k):
             print('!', end='')
         print()
+    # for k in range(m - 1):
+    #     for j in range(k + 1, m + 1):
+    #         print('!', end='')
+    #     print()
+
     # ------------------------------------------------------------------
     # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
@@ -203,8 +208,15 @@ def alternating_brackets(m, n):
        []
     Precondition:  m and n are positive integers with m >= n.
     """
+    for k in range(m - n + 1):
+        for j in range(m - k):
+            if j%2 == 0:
+                print('[',end='')
+            if j%2 != 0:
+                print(']', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -246,8 +258,13 @@ def triangle_same_number_in_each_row(r):
        55555
     Precondition:  r is a non-negative integer.
     """
+    for k in range(r + 1):
+        for __ in range(k):
+            print(k, end='')
+        print()
+    # ----------
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -289,8 +306,13 @@ def triangle_all_numbers_in_each_row(r):
        12345
     Precondition:  r is a non-negative integer.
     """
+    for k in range(r + 1):
+        for j in range(k):
+            print(j + 1, end='')
+        print()
+    # ----------
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
